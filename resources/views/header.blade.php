@@ -6,14 +6,14 @@
                 
                 <!-- Logo desktop -->		
                 <a href="#" class="logo">
-                    <img src="source/source/source/images/icons/logo-02.png" alt="IMG-LOGO">
+                    <img src="source/images/icons/logo-02.png" alt="IMG-LOGO">
                 </a>
 
                 <!-- Menu desktop -->
                 <div class="menu-desktop">
                     <ul class="main-menu">
                         <li>
-                            <a href="index">Home</a>
+                            <a href="home">Home</a>
                         </li>
 
                         <li>

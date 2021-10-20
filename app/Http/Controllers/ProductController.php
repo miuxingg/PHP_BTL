@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Products;
+use App\Models\Slide;
 
 class ProductController extends Controller
 {
@@ -23,7 +24,8 @@ class ProductController extends Controller
 
     public function getHome(){
         // $products = Products::find(1);
-        return view('page.home');
+        $slide = Slide::all();
+        return view('page.home', compact('slide'));
     }
 
     public function getProduct(){
@@ -34,15 +36,4 @@ class ProductController extends Controller
         return view('page.product-detail');
     }
 
-    public function contact(){
-        return view('page.contact');
-    }
-
-    public function blog(){
-        return view('page.blog');
-    }
-
-    public function about(){
-        return view('page.about');
-    }
 }

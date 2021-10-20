@@ -1,5 +1,7 @@
 @extends('master')
 @section('content')
+@section('title','Product Detail')
+
 @include('sub-header')
 
 <!-- breadcrumb -->
