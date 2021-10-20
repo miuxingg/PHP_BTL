@@ -1,5 +1,7 @@
 @extends('master')
 @section('content')
+@section('title','Product')
+
 @include('sub-header')
 <!-- Product -->
 <div class="bg0 m-t-23 p-b-140">

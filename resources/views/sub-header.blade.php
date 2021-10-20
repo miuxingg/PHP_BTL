@@ -16,7 +16,7 @@
                 <div class="menu-desktop">
                     <ul class="main-menu">
                         <li>
-                            <a href="index">Home</a>
+                            <a href="home">Home</a>
                             
                         </li>
 

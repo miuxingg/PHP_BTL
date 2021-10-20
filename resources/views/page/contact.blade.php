@@ -1,5 +1,7 @@
 @extends('master')
 @section('content')
+@section('title','Contact')
+
 @include('sub-header')
 
 	<!-- Title page -->
