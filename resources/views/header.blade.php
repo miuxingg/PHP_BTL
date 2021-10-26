@@ -17,11 +17,11 @@
                         </li>
 
                         <li>
-                            <a href="product">Shop</a>
+                            <a href="product/0">Shop</a>
                         </li>
 
                         <li class="label1" data-label1="hot">
-                            <a href="shoping-cart.html">Features</a>
+                            <a href="shopping-cart">Features</a>
                         </li>
 
                         <li>
@@ -151,23 +151,28 @@
 			
 			<div class="header-cart-content flex-w js-pscroll">
 				<ul class="header-cart-wrapitem w-full">
-					<li class="header-cart-item flex-w flex-t m-b-12">
-						<div class="header-cart-item-img">
-							<img src="source/source/source/images/item-cart-01.jpg" alt="IMG">
-						</div>
+                    @if (Session::has('cart'))
+                        @foreach ($product_cart as $item)
+                            <li class="header-cart-item flex-w flex-t m-b-12">
+                                <div class="header-cart-item-img">
+                                    <img src="source/images/{{$item['item']['image']}}" alt="IMG">
+                                </div>
 
-						<div class="header-cart-item-txt p-t-8">
-							<a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
-								White Shirt Pleat
-							</a>
+                                <div class="header-cart-item-txt p-t-8">
+                                    <a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
+                                        {{$item['item']['name']}}
+                                    </a>
 
-							<span class="header-cart-item-info">
-								1 x $19.00
-							</span>
-						</div>
-					</li>
+                                    <span class="header-cart-item-info">
+                                        {{$item['qty']}} x ${{$item['item']['price']}}
+                                    </span>
+                                </div>
+                            </li>
+                        @endforeach
+                    @endif
+					
 
-					<li class="header-cart-item flex-w flex-t m-b-12">
+					{{-- <li class="header-cart-item flex-w flex-t m-b-12">
 						<div class="header-cart-item-img">
 							<img src="source/source/source/images/item-cart-02.jpg" alt="IMG">
 						</div>
@@ -197,12 +202,13 @@
 								1 x $17.00
 							</span>
 						</div>
-					</li>
+					</li> --}}
 				</ul>
 				
 				<div class="w-full">
 					<div class="header-cart-total w-full p-tb-40">
-						Total: $75.00
+						Total:  @if (Session::has('cart')) {{Session('cart')->totalPrice}} @endif
+                        {{-- : Quantity: {{Session('cart')->totalQty}} --}}
 					</div>
 
 					<div class="header-cart-buttons flex-w w-full">
@@ -218,5 +224,7 @@
 			</div>
 		</div>
 	</div>
+
+
 </header>
 

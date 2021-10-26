@@ -24,14 +24,14 @@ Route::get('/home',
     ]
 );
 
-Route::get('product', 
+Route::get('product/{type}', 
     [
         'as'=>'product',
         'uses'=>'ProductController@getProduct'
     ]
 );
 
-Route::get('product-detail', 
+Route::get('product-detail/{id}', 
     [
         'as'=>'product-detail',
         'uses'=>'ProductController@getProductDetail'
@@ -56,5 +56,20 @@ Route::get('about',
     [
         'as'=>'about',
         'uses'=>'AboutController@about'
+    ]
+);
+
+Route::get('shopping-cart', 
+    [
+        'as'=>'shopping-cartout',
+        'uses'=>'ShoppingCart@shoppingCart'
+    ]
+);
+
+
+Route::get('add-to-cart',
+    [
+        'as'=>'addToCart',
+        'uses'=>'ProductController@getAddToCart'
     ]
 );
