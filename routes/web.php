@@ -16,7 +16,6 @@ Route::get('/', function () {
     return redirect('home');
 });
 
-// Route::get('/create', 'ProductController@createProduct');
 Route::get('/home', 
     [
         'as'=>'home',
@@ -73,3 +72,4 @@ Route::get('add-to-cart',
         'uses'=>'ProductController@getAddToCart'
     ]
 );
+
